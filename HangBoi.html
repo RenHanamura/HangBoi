@@ -1,0 +1,29 @@
+<script>
+    console.log("Welcome to this humble version of hangman");
+    var word = prompt("Please type the word to be guessed:").toLowerCase();
+    var hide = [];
+    for (let w = 0; w < word.length; w++) {
+        hide[w] = "_";
+    }
+    console.log(hide);
+    var naisu_desune = 0;
+    var FAQ = 0;
+    var lives = word.length;
+    for (let g = 0; g < word.length; g++) {
+        var guessing = prompt("Please type the letter that you bet for:");    
+        if (word[g] == guessing){
+            console.log("Good one");
+            naisu_desune = naisu_desune + 1;
+        }
+        else{
+        console.log("Excuse me, what the fuck")
+        lives = lives - 1;
+    }
+    }
+    if (naisu_desune == word.length){
+        console.log("CONGRATULATIONS KIDDO, THE WORD WAS "+word)
+    }
+    else if (lives == 0){
+        alert("Nice one, idiot");
+    }
+</script>
